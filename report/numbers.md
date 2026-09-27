@@ -13,9 +13,26 @@ Para el redactor. Todo sale de `python3 models/business_model.py` (corrido el 27
 | 4 | Mes 6 | 144 inscritos, 108 pagan; $432.000 y $302.400 | 48 y 40; $160.000 y $88.000 | Base: 12 minoristas con 12. Conservador: 6 con 8 |
 | 4 | Mes 12 | 468 inscritos, 416 pagan; $1.664.000 y $1.164.800 | 144 y 128; $512.000 y $281.600 | Base: 36 minoristas con 13; 4 minoristas nuevos al mes desde el mes 7 [S]. Conservador: 18 con 8; 2 nuevos al mes desde el mes 7 [S] |
 | 5 | Break-even | 904 vendedores que pagan; mes 22 | 1.150 vendedores; no llega en 60 meses | Costo fijo / contribución por vendedor. 904 son 5,1% de los 17.745 ambulantes de Cali A.M. (DANE, EMICRON 24 ciudades 2025, C. D.1_24C, CV 8,4%); no sé cuántos sacan fiado |
-| 6 | Cuánto necesito para sobrevivir | $34,5 millones (punto más bajo en el mes 21) | Más de $76 millones a 36 meses y sigue cayendo | Inversión inicial más pérdidas acumuladas hasta el punto más bajo. Sin mi salario: $8,5 millones y equilibrio en el mes 10 (base); $15,1 millones y mes 27 (conservador). De dónde sale: sección 6 |
+| 6 | Cuánto necesito para sobrevivir | $34,5 millones (punto más bajo en el mes 21) | Más de $76 millones a 36 meses y sigue cayendo | Inversión inicial más pérdidas acumuladas hasta el punto más bajo. Sin mi salario: $8,5 millones y equilibrio en el mes 10 (base); $15,1 millones y mes 27 (conservador). Estas dos cifras usan la estructura anterior (SAS, contador y abogado desde el mes 1); con el plan austero el conservador da mes 27 y $10.038.000 (concepto gratis) o $13.038.000 (pagado). De dónde sale: sección 6 |
 
-Versión corta para el cuerpo (si no cabe la de dos casos): usar la columna base y una línea: "En un caso conservador (la mitad del ritmo, 8 vendedores por minorista y 20% de tarifas sin cobrar) el modelo no cierra con mi salario en 60 meses; sin salario cierra en el mes 27 con $15,1 millones".
+Versión corta para el cuerpo (si no cabe la de dos casos): usar la columna base y una línea: "En un caso conservador (la mitad del ritmo, 8 vendedores por minorista y 20% de tarifas sin cobrar) el modelo no cierra con mi salario en 60 meses; sin salario cierra en el mes 27 con $10 a $13 millones" (plan austero; el informe usa esta).
+
+## 1b. Plan austero (el plan desde el 27 sep 2026)
+
+Decisión de Santiago: no cobro salario hasta que la operación cubra sus costos; después me pago solo del margen, hasta un mínimo. Mismo ritmo, tarifa y cobro del caso base. Sale de `LEAN_FREE_LEGAL` y `LEAN_PAID_LEGAL` en `models/business_model.py`.
+
+| Pregunta | Plan austero | Supuesto |
+|---|---|---|
+| Inversión inicial | $0,3 millones con concepto legal gratis; $3,3 millones si lo pago | Tarjetas y material $0,3 millones [S]; concepto de un consultorio jurídico universitario gratis [S, no verificado] o de un abogado $3 millones [S]. Sin registro de SAS al arrancar |
+| Costo mensual, meses 1 a 6 | $430.000 | Persona natural: sin salario y sin contador. Transporte $200.000, celular $80.000, herramientas $150.000 [S] |
+| Costo mensual desde el mes 7 | $780.000, más $600.000 una vez por el registro de la SAS | Entra el contador ($350.000 [S]) |
+| Break-even | 279 vendedores que pagan, mes 10 | $780.000 / $2.800; en el mes 10 pagan 312 |
+| Caja para sobrevivir | $3.386.800 (concepto gratis) o $6.386.800 (pagado); punto más bajo en el mes 9 | Inversión más pérdidas acumuladas |
+| Salario | Desde el mes 10 sale del excedente; el mínimo completo ($1.750.905) se cubre desde el mes 22 | Nunca se paga con caja propia |
+
+Comparación: con salario desde el mes 1, $34,5 millones y equilibrio en el mes 22 (caso base). Con salario solo desde el mes 7 (y SAS y contador desde ese mes), el script da $18,9 millones con concepto gratis o $21,9 millones pagado, equilibrio en el mes 22; en el chat se habló de unos $24 millones. Cualquiera de las dos cifras lleva a la misma decisión: el salario sale del margen.
+
+De dónde sale: de mis ahorros (decisión de Santiago, 27 sep 2026), nunca préstamos del público (Decreto 1981 de 1988). Fondo Emprender solo como ventaja condicionada (hoy no hay convocatoria para Cali); Fundación WWB Colombia como aliada del piloto, no como plata; BID Lab solo para una fase regional con 12 meses de datos del piloto, nunca como ingreso proyectado.
 
 ## 2. Supuestos que mueven el resultado
 
@@ -69,9 +86,9 @@ Con un equipo de $10 millones al mes harían falta unos 3.571 vendedores que pag
 
 ## 6. De dónde sale la plata
 
-**PENDIENTE: confirmar con Santiago antes de escribir** (brief-final, 9.1 fila 6 y punto 93). Propuesta de estructura: aportes de capital a la SAS (ahorro propio y, si aplica, familiares como socios), nunca préstamos recibidos del público, para no acercarme a la captación (Decreto 1981 de 1988). No cuento con el fellowship como fuente. Si Santiago no confirma, escribir solo: "Los $8,5 millones del arranque sin salario los pondría como capital de la SAS; la diferencia hasta $34,5 millones sería capital semilla que hoy no tengo."
+Resuelto el 27 sep 2026: ver la sección 1b. De mis ahorros (decisión de Santiago) para los $3,4 a $6,4 millones del plan austero, como aporte y nunca como préstamos del público (Decreto 1981 de 1988). No cuento con el fellowship como fuente.
 
 ## 7. Cómo se reproduce
 
-- `python3 models/business_model.py`: las seis respuestas en los dos casos, con y sin salario, la sensibilidad de la tarifa, el equipo de $10 millones, la vista de quien paga, la del vendedor y la carga con mercancía que se daña.
+- `python3 models/business_model.py`: las seis respuestas en los dos casos y el plan austero, con y sin salario, la sensibilidad de la tarifa, el equipo de $10 millones, la vista de quien paga, la del vendedor y la carga con mercancía que se daña.
 - `<venv>/bin/python models/build_prototype.py`: construye `report/prototipo.xlsx`, evalúa sus fórmulas, las compara con el modelo en Python (14 de 14 iguales) y escribe `report/prototipo-snapshot.html`.

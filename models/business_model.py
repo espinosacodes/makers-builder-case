@@ -10,7 +10,8 @@ through it. See report/brief-final.md, sections 2 and 9.
 
 This script answers the six questions of the case (initial investment, monthly fixed cost,
 contribution per user, users and revenue at months 3, 6 and 12, break-even, cash to survive) for a
-base case and a conservative case, and prints the views of the payer and of the vendor.
+base case, a conservative case and the lean plan (no salary until the operation covers its costs,
+persona natural for the first 6 months), and prints the views of the payer and of the vendor.
 
 Every input is a named constant. The comment next to it gives the source, or says [ASSUMPTION]
 when there is no data behind it. Run with: python3 models/business_model.py
@@ -73,7 +74,8 @@ class Scenario:
     """One set of commercial and growth assumptions."""
 
     def __init__(self, name, fee, collection, direct_cost, retailers, vendors_per_retailer,
-                 include_wage=True, free_first_month=True):
+                 include_wage=True, free_first_month=True, fixed_schedule=None,
+                 one_off_by_month=None, initial_investment=None, salary_from_margin=False):
         self.name = name
         self.fee = fee                          # pesos per enrolled vendor per month, paid by the payer
         self.collection = collection            # share of billed fees actually collected
@@ -82,10 +84,22 @@ class Scenario:
         self.vendors_per_retailer = vendors_per_retailer  # function: month -> vendors each
         self.include_wage = include_wage
         self.free_first_month = free_first_month  # each retailer pays from its second month
+        self.fixed_schedule = fixed_schedule    # optional function: month -> fixed cost that month
+        self.one_off_by_month = one_off_by_month or {}  # month -> one-off cash cost that month
+        self.initial_investment = INITIAL_INVESTMENT if initial_investment is None else initial_investment
+        # If True, the founder takes no salary until the month's contribution covers the fixed cost,
+        # and after that takes at most one minimum wage, only out of the month's surplus.
+        self.salary_from_margin = salary_from_margin
 
     def fixed_monthly(self):
+        """Steady-state fixed cost, the one the break-even vendor count is measured against."""
         total = sum(FIXED_MONTHLY.values())
         return total if self.include_wage else total - MINIMUM_WAGE_2026
+
+    def fixed_in_month(self, month):
+        if self.fixed_schedule is None:
+            return self.fixed_monthly()
+        return self.fixed_schedule(month)
 
     def contribution_per_vendor(self):
         # Expected non-payment lives here: uncollected fees. No money of the vendor moves through
@@ -145,6 +159,69 @@ CONSERVATIVE = Scenario(
     vendors_per_retailer=conservative_vendors_per_retailer,
 )
 
+# ---------------------------------------------------------------------------------------------
+# Lean plan (founder decision, 27 Sep 2026): same base ramp and prices, but
+#   - no founder salary until the operation covers its own costs; after that the salary comes
+#     only out of the monthly surplus, capped at one minimum wage;
+#   - first months as persona natural: no SAS registration and no accountant until month 7;
+#   - the lawyer's opinion either free (university consultorio juridico) or paid.
+# ---------------------------------------------------------------------------------------------
+LEAN_PERSONA_NATURAL_MONTHS = 6        # months 1 to 6 without SAS and without accountant
+LEAN_SAS_MONTH = LEAN_PERSONA_NATURAL_MONTHS + 1  # SAS registered and accountant hired in month 7
+SAS_REGISTRATION = 600_000             # [ASSUMPTION] same figure as in INITIAL_INVESTMENT
+LEGAL_OPINION_PAID = 3_000_000         # [ASSUMPTION] same figure as in INITIAL_INVESTMENT
+LEGAL_OPINION_FREE = 0                 # [ASSUMPTION, not verified] university consultorio juridico
+PRINTED_MATERIAL = 300_000             # [ASSUMPTION] vendor cards and pilot material
+ACCOUNTANT_MONTHLY = FIXED_MONTHLY["accountant (SAS books, e-invoicing)"]
+
+
+def lean_fixed(month):
+    """Fixed cost without founder salary; the accountant only starts with the SAS."""
+    without_wage = sum(FIXED_MONTHLY.values()) - MINIMUM_WAGE_2026
+    if month < LEAN_SAS_MONTH:
+        return without_wage - ACCOUNTANT_MONTHLY
+    return without_wage
+
+
+def lean_scenario(legal_opinion, label):
+    return Scenario(
+        name=f"lean, legal opinion {label}",
+        fee=BASE.fee, collection=BASE.collection, direct_cost=BASE.direct_cost,
+        retailers=base_retailers, vendors_per_retailer=base_vendors_per_retailer,
+        include_wage=False, fixed_schedule=lean_fixed,
+        one_off_by_month={LEAN_SAS_MONTH: SAS_REGISTRATION},
+        initial_investment={
+            "printed vendor cards and pilot material": PRINTED_MATERIAL,
+            "lawyer opinion on 5 questions": legal_opinion,
+        },
+        salary_from_margin=True,
+    )
+
+
+LEAN_FREE_LEGAL = lean_scenario(LEGAL_OPINION_FREE, "free")
+LEAN_PAID_LEGAL = lean_scenario(LEGAL_OPINION_PAID, "paid")
+
+
+def lean_conservative(legal_opinion, label):
+    """Lean cost structure on the conservative ramp (half the signing pace, 80% collection)."""
+    return Scenario(
+        name=f"lean conservative, legal opinion {label}",
+        fee=CONSERVATIVE.fee, collection=CONSERVATIVE.collection,
+        direct_cost=CONSERVATIVE.direct_cost,
+        retailers=conservative_retailers, vendors_per_retailer=conservative_vendors_per_retailer,
+        include_wage=False, fixed_schedule=lean_fixed,
+        one_off_by_month={LEAN_SAS_MONTH: SAS_REGISTRATION},
+        initial_investment={
+            "printed vendor cards and pilot material": PRINTED_MATERIAL,
+            "lawyer opinion on 5 questions": legal_opinion,
+        },
+        salary_from_margin=True,
+    )
+
+
+LEAN_CONSERVATIVE_FREE_LEGAL = lean_conservative(LEGAL_OPINION_FREE, "free")
+LEAN_CONSERVATIVE_PAID_LEGAL = lean_conservative(LEGAL_OPINION_PAID, "paid")
+
 HORIZON_MONTHS = 60
 MILESTONE_MONTHS = (3, 6, 12)
 
@@ -153,23 +230,28 @@ def simulate(scenario, horizon=HORIZON_MONTHS):
     """Month by month result. Break-even is the first month whose contribution covers fixed cost."""
     fixed = scenario.fixed_monthly()
     unit = scenario.contribution_per_vendor()
-    cumulative = -sum(INITIAL_INVESTMENT.values())
+    cumulative = -sum(scenario.initial_investment.values())
     trough, trough_month = -cumulative, 0
     rows, break_even_month = [], None
     for m in range(1, horizon + 1):
         paying = scenario.paying_vendors(m)
         billed = paying * scenario.fee
         contribution = paying * unit
-        result = contribution - fixed
+        operating = contribution - scenario.fixed_in_month(m)
+        if break_even_month is None and operating >= 0:
+            break_even_month = m
+        salary = 0
+        if scenario.salary_from_margin and break_even_month is not None:
+            salary = max(0, min(MINIMUM_WAGE_2026, operating))
+        result = operating - salary - scenario.one_off_by_month.get(m, 0)
         cumulative += result
         if -cumulative > trough:
             trough, trough_month = -cumulative, m
-        if break_even_month is None and result >= 0:
-            break_even_month = m
         rows.append({
             "month": m, "retailers": scenario.retailers(m), "vendors": scenario.vendors(m),
             "paying": paying, "billed": billed, "collected": billed * scenario.collection,
-            "contribution": contribution, "result": result, "cumulative": cumulative,
+            "contribution": contribution, "salary": salary, "result": result,
+            "cumulative": cumulative,
         })
     return {
         "rows": rows, "fixed": fixed, "unit": unit,
@@ -280,6 +362,19 @@ if __name__ == "__main__":
                            sc.direct_cost, sc.retailers, sc.vendors_per_retailer, include_wage=False)
         print_scenario(no_wage)
 
+    print("\n=== LEAN PLAN (no salary until the operation covers its costs; base and conservative ramps) ===")
+    for sc in (LEAN_FREE_LEGAL, LEAN_PAID_LEGAL,
+               LEAN_CONSERVATIVE_FREE_LEGAL, LEAN_CONSERVATIVE_PAID_LEGAL):
+        sim = print_scenario(sc)
+        print(f"  initial investment {sum(sc.initial_investment.values()):,.0f}; fixed cost months 1 to "
+              f"{LEAN_PERSONA_NATURAL_MONTHS} {lean_fixed(1):,.0f}, from month {LEAN_SAS_MONTH} "
+              f"{lean_fixed(LEAN_SAS_MONTH):,.0f} plus SAS registration {SAS_REGISTRATION:,.0f} once")
+        full_wage = next((r["month"] for r in sim["rows"] if r["salary"] >= MINIMUM_WAGE_2026), None)
+        print(f"  first month the surplus pays a full minimum wage: {full_wage}")
+    base_sim = results["base"]
+    print(f"Comparison, base with salary from month 1: cash needed {base_sim['cash_needed']:,.0f}, "
+          f"break-even month {base_sim['break_even_month']}")
+
     print("\nSensitivity on the base ramp: fee x founder salary")
     for fee in (2_000, 4_000, 6_000):
         for wage in (True, False):
@@ -293,9 +388,11 @@ if __name__ == "__main__":
     print(f"Team of {TEAM_FIXED_MONTHLY:,} a month: {TEAM_FIXED_MONTHLY / BASE.contribution_per_vendor():,.0f} "
           f"paying vendors to break even")
 
-    print("\nFunding of the cash needed: PENDING founder confirmation. Proposed structure: equity "
-          "contributions to the SAS (own savings, family as shareholders), never loans taken from "
-          "the public (captacion line, Decreto 1981 de 1988). The fellowship is not counted.")
+    print("\nFunding of the lean cash (founder decision, 27 Sep 2026): own capital, personal or family "
+          "savings [ASSUMPTION], never loans taken from the public (captacion line, Decreto 1981 de "
+          "1988). Fondo Emprender only as a conditional upside (no open call for Cali today); "
+          "Fundacion WWB Colombia as a pilot ally, not as money; BID Lab only for a later regional "
+          "phase after 12 months of pilot data. The fellowship is not counted.")
 
     print("\nPayer view (retailer or wholesaler), per vendor per year, all the fiado deferred")
     for fiado in (FIADO_LOW, FIADO_UPPER_BOUND):
