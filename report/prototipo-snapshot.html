@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Prototipo: libro del vendedor</title>
+<style>
+.proto-snap { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 7.4pt; color: #111; }
+.proto-snap h3 { font-size: 9pt; margin: 8pt 0 3pt 0; }
+.proto-snap p { margin: 2pt 0 4pt 0; }
+.proto-snap table { border-collapse: collapse; width: 100%; margin-bottom: 6pt; }
+.proto-snap th, .proto-snap td { border: 0.5pt solid #b8b8b8; padding: 1.5pt 3pt; text-align: right; }
+.proto-snap th { background: #1f4e79; color: #fff; font-weight: 600; text-align: center; }
+.proto-snap td.l { text-align: left; }
+.proto-snap td.in { background: #fff2cc; }
+.proto-snap td.out { background: #e2efda; }
+.proto-snap tr.rain td { background: #ddebf7; }
+</style></head><body><section class="proto-snap">
+
+<h3>Hoja 1. Libro de un vendedor de carrito: con la cláusula y con gota a gota</h3>
+<p>Supuestos (amarillo) y resultados (verde) de 30 días de venta. La lluvia del ejemplo es inventada para mostrar el cálculo; el dato real es 26 de 294 días de venta con 5 mm o más (IDEAM 0026055120, cálculo propio).</p>
+<table><tr><th>Supuesto</th><th>Valor</th></tr>
+<tr><td class="l">Fiado que saca cada mañana</td><td class="in">$62.000</td></tr>
+<tr><td class="l">Ingreso neto de un día normal</td><td class="in">$38.600</td></tr>
+<tr><td class="l">Ventas en día de lluvia (% de un día normal)</td><td class="in">30%</td></tr>
+<tr><td class="l">Ventas en día de lluvia leve, bajo el umbral (%)</td><td class="in">85%</td></tr>
+<tr><td class="l">Lo que se queda para la casa el día de lluvia (tope)</td><td class="in">$15.000</td></tr>
+<tr><td class="l">Umbral de lluvia (mm entre 7 a. m. y 7 p. m.)</td><td class="in">5,0</td></tr>
+<tr><td class="l">Días de venta para pagar lo aplazado</td><td class="in">3</td></tr>
+<tr><td class="l">Recargo del gota a gota por préstamo</td><td class="in">20%</td></tr>
+<tr><td class="l">Cuotas diarias del gota a gota (lunes a sábado)</td><td class="in">30</td></tr>
+</table>
+<table><tr><th>Resultado en 30 días de venta</th><th>Con la cláusula</th><th>Con gota a gota</th></tr>
+<tr><td class="l">Días en que rigió la cláusula en el ejemplo</td><td class="out">3</td><td class="out">3</td></tr>
+<tr><td class="l">Recargo o interés que paga el vendedor</td><td class="out">$0</td><td class="out">$29.231</td></tr>
+<tr><td class="l">Ese costo como % del ingreso de un día normal</td><td class="out">0%</td><td class="out">76%</td></tr>
+<tr><td class="l">Préstamos de gota a gota que tuvo que tomar</td><td class="out">0</td><td class="out">3</td></tr>
+<tr><td class="l">De esos, préstamos que también pagan cuotas de otro gota a gota</td><td class="out">0</td><td class="out">2</td></tr>
+<tr><td class="l">Queda para la casa en 30 días de venta (sin restar lo que sigue debiendo)</td><td class="out">$916.560</td><td class="out">$950.372</td></tr>
+<tr><td class="l">Lo que sigue debiendo al día 30 (fuera del fiado del día)</td><td class="out">$0</td><td class="out">$63.043</td></tr>
+<tr><td class="l">Casa menos deuda al día 30 (la diferencia es el interés)</td><td class="out">$916.560</td><td class="out">$887.329</td></tr>
+<tr><td class="l">Mayor saldo aplazado que cargó quien fía</td><td class="out">$93.640</td><td class="out">$0</td></tr>
+</table>
+<table><tr><th>Día de venta</th><th>Lluvia (mm)</th><th>¿Rige la cláusula?</th><th>Ventas del día</th><th>Cláusula: cuota de lo aplazado</th><th>Cláusula: paga al que fía</th><th>Cláusula: se aplaza hoy</th><th>Cláusula: saldo aplazado con quien fía</th><th>Cláusula: queda para la casa</th><th>Gota a gota: cuota de hoy</th><th>Gota a gota: préstamo nuevo</th><th>Gota a gota: saldo con el prestamista</th><th>Gota a gota: queda para la casa</th></tr>
+<tr><td>1</td><td>0,0</td><td>No</td><td>$100.600</td><td>$0</td><td>$62.000</td><td>$0</td><td>$0</td><td>$38.600</td><td>$0</td><td>$0</td><td>$0</td><td>$38.600</td></tr>
+<tr><td>4</td><td>0,0</td><td>No</td><td>$100.600</td><td>$0</td><td>$62.000</td><td>$0</td><td>$0</td><td>$38.600</td><td>$0</td><td>$0</td><td>$0</td><td>$38.600</td></tr>
+<tr class="rain"><td>5</td><td>12,4</td><td>Sí</td><td>$30.180</td><td>$0</td><td>$15.180</td><td>$46.820</td><td>$46.820</td><td>$15.000</td><td>$0</td><td>$46.820</td><td>$56.184</td><td>$15.000</td></tr>
+<tr><td>6</td><td>0,0</td><td>No</td><td>$100.600</td><td>$15.607</td><td>$77.607</td><td>$0</td><td>$31.213</td><td>$22.993</td><td>$1.873</td><td>$0</td><td>$54.311</td><td>$36.727</td></tr>
+<tr><td>7</td><td>0,0</td><td>No</td><td>$100.600</td><td>$15.607</td><td>$77.607</td><td>$0</td><td>$15.607</td><td>$22.993</td><td>$1.873</td><td>$0</td><td>$52.438</td><td>$36.727</td></tr>
+<tr><td>8</td><td>0,0</td><td>No</td><td>$100.600</td><td>$15.607</td><td>$77.607</td><td>$0</td><td>$0</td><td>$22.993</td><td>$1.873</td><td>$0</td><td>$50.566</td><td>$36.727</td></tr>
+<tr><td>9</td><td>1,2</td><td>No</td><td>$85.510</td><td>$0</td><td>$62.000</td><td>$0</td><td>$0</td><td>$23.510</td><td>$1.873</td><td>$0</td><td>$48.693</td><td>$21.637</td></tr>
+<tr><td>12</td><td>0,0</td><td>No</td><td>$100.600</td><td>$0</td><td>$62.000</td><td>$0</td><td>$0</td><td>$38.600</td><td>$1.873</td><td>$0</td><td>$43.074</td><td>$36.727</td></tr>
+<tr class="rain"><td>13</td><td>7,0</td><td>Sí</td><td>$30.180</td><td>$0</td><td>$15.180</td><td>$46.820</td><td>$46.820</td><td>$15.000</td><td>$1.873</td><td>$48.693</td><td>$99.633</td><td>$15.000</td></tr>
+<tr class="rain"><td>14</td><td>9,2</td><td>Sí</td><td>$30.180</td><td>$15.607</td><td>$15.180</td><td>$62.427</td><td>$93.640</td><td>$15.000</td><td>$3.821</td><td>$50.641</td><td>$156.581</td><td>$15.000</td></tr>
+<tr><td>15</td><td>0,0</td><td>No</td><td>$100.600</td><td>$36.416</td><td>$98.416</td><td>$0</td><td>$57.224</td><td>$2.184</td><td>$5.846</td><td>$0</td><td>$150.735</td><td>$32.754</td></tr>
+<tr><td>16</td><td>0,0</td><td>No</td><td>$100.600</td><td>$36.416</td><td>$98.416</td><td>$0</td><td>$20.809</td><td>$2.184</td><td>$5.846</td><td>$0</td><td>$144.889</td><td>$32.754</td></tr>
+<tr><td>17</td><td>0,0</td><td>No</td><td>$100.600</td><td>$20.809</td><td>$82.809</td><td>$0</td><td>$0</td><td>$17.791</td><td>$5.846</td><td>$0</td><td>$139.043</td><td>$32.754</td></tr>
+<tr><td>21</td><td>3,4</td><td>No</td><td>$85.510</td><td>$0</td><td>$62.000</td><td>$0</td><td>$0</td><td>$23.510</td><td>$5.846</td><td>$0</td><td>$115.658</td><td>$17.664</td></tr>
+<tr><td>30</td><td>0,0</td><td>No</td><td>$100.600</td><td>$0</td><td>$62.000</td><td>$0</td><td>$0</td><td>$38.600</td><td>$5.846</td><td>$0</td><td>$63.043</td><td>$32.754</td></tr>
+</table>
+<p>Fiado de $62.000 todos los días. Se muestran 15 de los 30 días (la hoja los tiene todos). En azul, los días en que rige la cláusula; los días 9 y 21 llueve poco, bajan las ventas y la cláusula no se activa.</p>
+<h3>Hoja 2. Números de la SAS (caso base)</h3>
+<table><tr><th>Resultado</th><th>Valor</th></tr>
+<tr><td class="l">Inversión inicial</td><td class="out">$3.900.000</td></tr>
+<tr><td class="l">Costo fijo mensual</td><td class="out">$2.530.905</td></tr>
+<tr><td class="l">Contribución por vendedor al mes</td><td class="out">$2.800</td></tr>
+<tr><td class="l">Vendedores que pagan para el equilibrio</td><td class="out">904</td></tr>
+<tr><td class="l">Mes del equilibrio</td><td class="out">22</td></tr>
+<tr><td class="l">Caja necesaria (inversión más pérdidas hasta el punto más bajo)</td><td class="out">$34.523.005</td></tr>
+<tr><td class="l">Equipo de $10 millones al mes: vendedores para el equilibrio</td><td class="out">3.571</td></tr>
+<tr><td class="l">Quien fía: aplazado al año por vendedor</td><td class="out">$1.612.000</td></tr>
+<tr><td class="l">Quien fía: costo del plazo al año</td><td class="out">$2.014</td></tr>
+<tr><td class="l">Quien fía: impago de lo aplazado al año</td><td class="out">$48.360</td></tr>
+<tr><td class="l">Quien fía: tarifa al año</td><td class="out">$48.000</td></tr>
+<tr><td class="l">Quien fía: margen que le deja un vendedor al año</td><td class="out">$1.934.400</td></tr>
+<tr><td class="l">Se paga sola si le evita perder esta parte de sus vendedores al año</td><td class="out">5,1%</td></tr>
+</table>
+<table><tr><th>Mes</th><th>Inscritos</th><th>Pagan</th><th>Facturado al mes</th><th>Contribución al mes</th></tr>
+<tr><td>3</td><td>40</td><td>27</td><td>$108.000</td><td>$75.600</td></tr>
+<tr><td>6</td><td>144</td><td>108</td><td>$432.000</td><td>$302.400</td></tr>
+<tr><td>12</td><td>468</td><td>416</td><td>$1.664.000</td><td>$1.164.800</td></tr>
+</table>
+<p>Generado desde report/prototipo.xlsx con models/build_prototype.py (fórmulas evaluadas con la librería formulas y verificadas contra models/business_model.py). Los supuestos marcados [S] y sus fuentes están en la hoja.</p>
+</section></body></html>

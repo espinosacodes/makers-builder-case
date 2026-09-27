@@ -1,0 +1,184 @@
+Cláusula de lluvia del fiado
+
+Santiago Espinosa · Cali, Colombia · Makers Fellowship, Builder Case · 27 de septiembre de 2026
+
+Mi tesis. Para el vendedor que vive del fiado diario, el gota a gota no le gana al sistema formal por precio, y los requisitos explican solo una parte. Le gana en la tarde en que un día sin ventas rompe el crédito que ya tiene: el fiado diario sin interés de su minorista. El formal no compite ahí porque vende plata a meses a alguien a quien le faltan uno o dos días. No es la única puerta al gota a gota (el hogar y los choques familiares también lo son), pero es la que un tercero puede cerrar sin prestar.
+
+Marcas: [R1], referencia (Anexo A); [Inf], informante, y [Col], colaborador (Anexo C); [S], supuesto sin dato.
+
+1. Diagnóstico y validación
+
+Qué tan grande es. De los 4,9 millones de micronegocios que funcionaron en 2023, 14,2% pidió crédito y 22,9% de esos fue a un gota a gota: 160.724 negocios, el piso oficial [R1, C. H.2 y H.4]. El usuario central no es el tendero. Entre los vendedores ambulantes que pidieron crédito, 61,8% fue a un gota a gota, frente a 11,3% en las tiendas de barrio [R2, C. 18.1; R3]. En Cali, 51,3% de la deuda de 300 ambulantes del centro era con gota a gota, a 20,4% mensual en promedio (2016) [R4].
+
+Consecuencias. El gota a gota es 17,7% de la deuda de los hogares que ganan hasta un salario mínimo [R5, p. 4]. La amenaza es la forma principal de cobro en Costa Rica [R6] y lo primero en los casos que conoce la informante; en uno, una vendedora de comida "ni volvió a sacar el negocio" [Inf].
+
+Por qué falla el formal. No es el precio. Al tope de usura de septiembre de 2026 [R7], el préstamo diario legal más caro posible cobra $3.436 diarios por cada $100.000 en 30 cuotas, frente a $4.000 del gota a gota: solo 14% menos (cálculo propio). Es la forma del producto: 87,2% del crédito formal se paga en cuota mensual [R8, p. 58], y por los costos fijos un microcrédito de un salario mínimo cuesta 100,3% de lo prestado [R9, pp. 6 y 7]. Además, a quien pide le aprueban 92,9%; entre los que no piden, 42,5% no lo hace por miedo a endeudarse, 14,6% por requisitos y 6,5% por la tasa [R1, C. H.3 y H.5].
+
+Qué hace bien el informal. El fiado del proveedor no cobra interés, se basa en conocer a la persona y su sanción es la exclusión [R10]. El gota a gota llega rápido, cobra solo en los días de venta [R11] y renueva al que paga; en Perú, 82% llegó por recomendación [R12].
+
+Lo que encontré en campo. Un colaborador conversó en mi nombre con vendedores de carrito en la estación Universidades del MIO el 26 de septiembre. Tengo su resumen oral, sin número de vendedores ni citas de cada uno, y las respuestas de una informante de Cali que conoce varios casos (segunda mano, sin muestreo). Esto sirve para encontrar mecanismos, no para medir; por eso cruzo cada hallazgo con un dato o un estudio.
+
+Según el colaborador, los vendedores "con lo que tienen que comprar para subsistir ese día, se lo piden prestado al minorista", sin interés [Col]; lo leo como la mercancía del día, y el fiado de mañana a tarde ya está documentado en Kenia [R13, p. 39]. "Hay días en que, no sé, llovió, entonces nadie va [...] Y ahí es cuando entran con un gota a gota", y después "tienen que pagar un gota a gota con otro gota a gota" [Col]. No encontré publicado ese paso (búsqueda limitada), así que es una hipótesis de trabajo.
+
+Lo medí: en 12 meses, la estación del IDEAM en la Universidad del Valle marcó 5 mm o más de lluvia entre 7 a. m. y 7 p. m. en 26 de 294 días de venta; en los días con dato, nunca tres seguidos (cálculo propio, [R14]). El choque es frecuente y corto: si la mercancía no se daña, lo que falta ese día es tiempo, no plata. Con todo esto, mi pregunta cambió de "¿cómo le presto más barato?" a "¿cómo evito que un día de lluvia rompa un fiado que ya funciona?".
+
+Tabla 1. De cada hallazgo a cada decisión
+
+Hallazgo | Qué lo respalda | Qué decidí
+Fiado diario sin interés [Col] | Fiado de mañana a tarde [R13] | No crear crédito: trabajar dentro del fiado
+La lluvia rompe el pago [Col] | 26 de 294 días, rachas de 1 o 2 (cálculo propio) | Solo se activa ese día; se paga en tercios
+Un gota a gota paga otro [Col] [Inf] | Pagar la deuda no rompe el ciclo [R15] | Llegar antes del primer préstamo; no refinanciar
+La sanción del que fía es la exclusión [R10] | La flexibilidad pedida por clientes nuevos subió el impago [R16] | Decide un dato público, no el deudor; 4 semanas de historial
+
+Al vendedor no le falta crédito. Le falta que un día de lluvia no cuente como quedar mal.
+
+2. La propuesta
+
+Cláusula de lluvia del fiado. Cuando la estación del IDEAM registra 5 mm o más de lluvia entre 7 a. m. y 7 p. m., el vendedor se queda con lo que vendió hasta $15.000 para la casa [S], abona el resto a su fiado y lo que falte lo paga en tercios en sus tres días de venta siguientes, sin recargo. Al otro día recibe fiado como siempre. A cada aplazamiento lo llamo un puente. Quien fía carga ese plazo y me paga $4.000 al mes por vendedor inscrito. Yo pongo el dato, la regla escrita y el registro. No presto, no aseguro y la plata del vendedor nunca pasa por mí.
+
+Usuario y alcance. El vendedor de carrito que cada mañana saca fiada la mercancía del día y la paga esa tarde, con 4 semanas o más de fiado con ese minorista [S]. En Cali y su área metropolitana hay 17.745 micronegocios ambulantes [R17, C. D.1_24C], y mi plan llega a 468 en el mes 12. El DANE casi no ve este fiado: solo 1,8% de los ambulantes que pidieron crédito se lo pidió a un proveedor [R2, C. 18.1]. Leído literal, serían unos 50 (17.745 × 15,4% que pide crédito [R2, C. 16.1] × 1,8%; cálculo propio), frente a los 904 del equilibrio. La otra lectura es que nadie llama "crédito" a la mercancía del día. Por eso lo primero es contar: si con los 5 primeros minoristas no llego a 40 vendedores con fiado diario, el modelo no cierra y lo digo.
+
+Tabla 2. Paso a paso: quién hace qué, cuándo, con qué y dónde está la plata
+
+Cuándo y quién | Qué hace y con qué | Dónde está la plata
+Semana 0. Yo | Constituyo una SAS de servicios de información [R18] y dejo corriendo el programa que lee la estación cada 30 minutos (API de datos.gov.co, WhatsApp Business) | Capital propio en la SAS
+Semana 1. Yo y el minorista | Llego con un vendedor que ya le compra; primer mes gratis. El minorista escoge quién entra y explica la regla con una tarjeta. Al vendedor no se le pide cédula, RUT ni celular (93,3% no tiene RUT [R2, C. 13]) | Nada se mueve
+Día de lluvia. Programa, vendedor y minorista | Al pasar 5 mm, WhatsApp al minorista ("Rige la cláusula", Anexo B). El vendedor guarda hasta $15.000 y abona el resto; esa noche el minorista responde quién no alcanzó ("vendedor 3: $45.000") | La deuda sigue con quien fía, con otra fecha
+Días de venta 1 a 3, más 2 de margen. Vendedor y minorista | Fiado como siempre más un tercio (unos $15.600 con fiado de $62.000); al tercer "pagó", el programa marca "puente cerrado". Si al día 5 no cerró, decide el minorista, como hoy, y el vendedor queda no elegible | Del vendedor al minorista; si no paga, la pérdida es de quien fía
+Fin de mes. Quien fía | Paga la tarifa por Nequi o transferencia. Si el minorista paga a diario, el mayorista corre su cobro y paga él | Única entrada de la SAS
+
+Reglas y límites. Máximo 2 días aplazados abiertos por vendedor [S]. El programa solo habla con quien fía: un mensaje al vendedor sobre lo que debe podría leerse como cobranza [R19]. Elegí la lluvia porque llega después de sacar la mercancía. La enfermedad y los choques familiares no tienen dato público y el pase pedido por el deudor subió el impago [R16], así que quedan fuera, como la mercancía que se daña. El punto débil son dos días de lluvia seguidos: los tercios se suman y al vendedor le quedan $2.184 para la casa (Anexo B). Lo primero que pruebo es pagar en sextos, unos $7.800 diarios, y el puente cierra en 8 días de venta, no en 5 (cálculo propio).
+
+Una sola pieza para los cuatro puntos: un dato público de lluvia que corre la fecha de pago de un crédito que ya existe, entre comerciantes que ya se conocen.
+
+• No soy entidad financiera. El fiado ya existe y no cobra interés, así que no hay usura; no hay prima ni indemnización, así que no es seguro; la plata del vendedor no pasa por mí, así que no capto dinero del público, que sin autorización es delito [R20; R21]. Queda para el abogado si una regla pagada por quien fía puede leerse como seguro.
+• Ingreso diario sin ahorro. La regla actúa solo el día sin ingreso, cuando la falta de ahorro obliga a pedir: 49,9% de los adultos no podría reunir fondos de emergencia en 30 días o le sería muy difícil [R22]. Ese día, cubrir el fiado con un gota a gota a 20% le costaría de 16% a 32% de lo que gana (unos $38.600 diarios [R2, C. 24]; cálculo propio). Devuelve en tercios y solo en días de venta, como cobra el informal [R11].
+• Soy un desconocido. El vendedor no me entrega nada y su trato sigue con el minorista de siempre. La confianza se traslada a unos pocos minoristas (solo 5,6% confía mucho en desconocidos [R23, Tabla 13]), a los que llego con un vendedor que ya les compra y un disparador que revisan solos. La paciencia que hoy es un favor ("le tuvo paciencia solamente porque era amiga mía" [Inf]) se vuelve una regla.
+• El problema ya tiene soluciones. Las que encontré venden plata a 30 días o más: Nequi [R24], los préstamos de Bogotá [R25] y el programa CREO [R26]; Tienda Pago, según su sitio, financia a bodegas el pago al distribuidor [R27]. El puente de un día ya se vende, caro: el "diario anticipado" de Corabastos cobra 10% en el día [R28, p. 7]. Aprendí que cobrar cuando entra la plata pesa más que el precio: el mismo seguro lo tomó 72% cobrado en la cosecha y 5% por adelantado [R29]. Lo más parecido a mi idea son las cláusulas de huracán de la deuda soberana, que suspenden pagos ante un evento medido; no encontré esa lógica en el fiado (búsqueda limitada). Aquí el plazo normal sigue en cero días y solo lo abre un dato público, no una solicitud del deudor.
+
+3. Los números del negocio
+
+Tabla 3. Las seis respuestas, caso base (cálculo propio, Anexo B)
+
+Pregunta y respuesta | Supuesto y fuente
+1. Inversión inicial: $3,9 millones. $0 para prestar, porque no presto | SAS $0,6 millones, abogado $3 millones, tarjetas $0,3 millones [S]. El programa lo hago yo
+2. Costo mensual: $2.530.905 | Mi salario de un mínimo de 2026 ($1.750.905 [R30]); transporte, celular, herramientas y contador, $780.000 [S]
+3. Por usuario: $2.800 por vendedor que paga, al mes | Tarifa de $4.000 [S, sin precedente], 2,5% del margen de $161.200 que un vendedor le deja al mes a quien fía ($62.000 × 26 días × 10% [S]). Cobro 90% y resto $800 de costo directo [S]
+4. Usuarios e ingresos: pagan 27 en el mes 3 ($108.000 facturados, $75.600 de contribución), 108 en el 6 ($432.000 y $302.400) y 416 en el 12 ($1.664.000 y $1.164.800) | 4, 12 y 36 minoristas con 10 a 13 vendedores cada uno [S] (40, 144 y 468 inscritos); 4 minoristas nuevos al mes desde el mes 7, lo que alcanza una persona [S]
+5. Break-even: 904 vendedores que pagan, mes 22 | $2.530.905 / $2.800, con el ritmo de la fila 4
+6. Para sobrevivir: $34,5 millones con salario; $8,5 millones sin salario (equilibrio en el mes 10) | Inversión más pérdidas acumuladas. Los $8,5 millones irían como capital de la SAS, nunca como préstamos del público [R21]; el resto sería capital semilla que hoy no tengo
+
+¿Cierra? Con mi salario, no cierra en los primeros 12 meses (en el mes 12 pierdo $1,37 millones al mes). En un caso conservador (la mitad del ritmo, 8 vendedores por minorista, 20% sin cobrar y $1.000 de costo directo) no cierra con salario en 60 meses; sin salario cierra en el mes 27 con $15,1 millones. Con tarifa de $2.000 no llego al equilibrio en 36 meses; con $6.000, en el mes 15. Si no cierra, será por volumen y por una tarifa que nadie ha pagado todavía, no por riesgo de crédito; por eso cobro desde el segundo mes y busco vender por mayorista.
+
+Para quien paga. Con fiado de $62.000, 3% de impago [S] y margen de 10% [S], la cláusula se paga sola si le evita a quien fía perder 1 de cada 20 vendedores al año (cálculo propio). Lo difícil es la caja: con 12 vendedores, un día de lluvia le deja unos $562.000 sin cobrar; si no los tiene, la cláusula sube al mayorista.
+
+4. Alternativas descartadas y riesgo principal
+
+Descarte 1: la ventanilla del tendero (préstamo diario cobrado en la tienda). Parecía buena porque iba al usuario con más gota a gota y copiaba la cuota diaria. La maté por tres razones. A precio legal y con montos de ambulante, el neto por usuario va de $5.857 a -$26.143 al año, negativo desde 1,5% de pérdida por ciclo (cálculo propio). De dos casos de la informante saco una hipótesis: se le paga primero al que amenaza [Inf] y un prestamista legal quedaría de último. Y el vendedor ya tiene crédito diario sin interés [Col].
+
+Descarte 2: el día de lluvia pagado (seguro paramétrico vía una aseguradora). Usaba el mismo dato y resolvía la licencia. Lo mató la frecuencia: con 26 días de lluvia al año, pagar el fiado entero exige una prima de unos $16.600 por día de venta, 43% del ingreso diario (cálculo propio con la siniestralidad de los microseguros [R31, p. 172]); además, la demanda de seguro de lluvia es baja aun a buen precio [R32]. Lo que me llevé: las pérdidas pequeñas y frecuentes se suavizan con plazo; se aseguran las raras.
+
+El riesgo real tiene tres capas. Primera, que el hueco no esté donde creo: si el minorista ya espera (en la única etnografía del fiado en Cali que encontré se salda "en los próximos días" [R10]), o si la plata del gota a gota se va sobre todo al hogar (28,9% del crédito del ambulante va a gasto personal [R2, C. 21.1]), la cláusula cambia poco, y todo viene de un resumen oral de segunda mano. Segunda, que nadie quiera cargar el día de lluvia, porque hoy no le duele a quien fía, o que el minorista no tenga la caja; por eso no firmo antes de probar la premisa y, si él no puede esperar, voy al mayorista. Tercera, que la regla se copie: tras el mes gratis, el minorista puede usarla sin pagarme. Cobro la regla fijada de antemano, el registro y el acuerdo con el mayorista; si la siguen usando sin pagar, la tarifa no cierra.
+
+Cómo sé si me equivoqué. Antes de firmar, pregunto a 6 vendedores y un minorista por la última vez que llovió: si 3 o más de 6 dicen que el minorista espera, o si la mayoría dice que la mercancía se daña, la cláusula no sirve. Mes 1: al menos 1 de 5 minoristas la acepta gratis, o paro. Meses 2 y 3: 90% de los puentes cierra a tiempo (5 días de venta, u 8 con sextos) y el impago de lo aplazado queda bajo 5%, o subo el historial exigido o paro. Mes 3: al menos la mitad de los minoristas paga los $4.000; si no, pruebo $2.000 con el mayorista, y si tampoco, digo que el modelo no cierra.
+
+ANEXOS
+
+Anexo A. Referencias
+
+Todas las URL se consultaron entre el 26 y el 27 de septiembre de 2026. En los datos del DANE cito el cuadro del anexo estadístico, no el boletín.
+
+R1. DANE (2025). Encuesta de Micronegocios (EMICRON) 2024, anexo estadístico. https://www.dane.gov.co/files/operaciones/EMICRON/anex-EMICRON-2024.xlsx
+
+R2. DANE (2026). EMICRON Vendedores ambulantes 2025, anexo estadístico (actualizado el 18 sep 2026). https://www.dane.gov.co/files/operaciones/EMICRON/anex-EMICRONVendedoresAmbulantes-2025.xlsx
+
+R3. DANE (2026). EMICRON Panaderías y tiendas de barrio 2024. https://www.dane.gov.co/files/operaciones/EMICRON/bol-EMICRON-PanaderiasTiendasBarrio-2024.pdf
+
+R4. Martínez, L. M. y Rivera-Acevedo, J. D. (2019). Debt portfolios of street vendors: survey data from Colombia. Data in Brief 24, 103714. https://pmc.ncbi.nlm.nih.gov/articles/PMC6484363/
+
+R5. ANIF y Colombia Fintech (2025). Análisis de cambios metodológicos de la tasa de usura y su impacto en la inclusión financiera. https://anif.com.co/wp-content/uploads/anif-colombia-fintech-analisis-de-cambios-metodologicos-de-la-tasa-de-usura-y-su-impacto-en-la-inclusion-financiera-un-enfoque-para-el-desarrollo-economico-sostenible-en-colombia-1.pdf
+
+R6. UNODC (2025). Esquemas de préstamos con prácticas ilegales: el fenómeno gota a gota en Costa Rica. https://costarica.un.org/sites/default/files/2025-09/EstudioGG_END.pdf
+
+R7. Superintendencia Financiera de Colombia (2026). Comunicado de tasas de usura, Resolución 1260 de 2026 (1 a 30 sep 2026). https://www.superfinanciera.gov.co/loader.php?lServicio=Tools2&lTipo=descargas&lFuncion=descargar&idFile=1083364
+
+R8. Banca de las Oportunidades, Superintendencia Financiera y Banco de la República (2022). Encuesta de Demanda de Inclusión Financiera 2022. https://www.bancadelasoportunidades.gov.co/sites/default/files/2022-12/Encuesta%20de%20demanda%202022%20VF.pdf
+
+R9. Asobancaria (2025). Banca & Economía 1475, con el estudio de costos del microcrédito de Finagro y Emprender. https://www.asobancaria.com/ws/semanas-economicas/1475-BE.pdf
+
+R10. Martínez Benavides, A. (2021). Circuitos crediticios: el fiado en Cali, Colombia. Estudios Sociológicos XXXIX(116), 467 a 494. https://www.redalyc.org/journal/598/59868383004/html/
+
+R11. Palomino-Martínez, M. F. (2025). “Ni mucho ni a todo el mundo”: la economía moral de un gota a gota. Revista Colombiana de Antropología 61(3). https://revistas.icanh.gov.co/index.php/rca/article/view/2928
+
+R12. Instituto Peruano de Economía para Asbanc (2024). El mercado de crédito informal en el Perú (1.203 prestatarios en 5 ciudades). https://ipe.org.pe/wp-content/uploads/2024/10/IPE_El_mercado_de_credito_informal_en_el_Peru.pdf
+
+R13. Roever, S. (2014). Informal Economy Monitoring Study Sector Report: Street Vendors. WIEGO. https://www.wiego.org/sites/default/files/publications/files/IEMS-Sector-Full-Report-Street-Vendors.pdf
+
+R14. IDEAM (2026). Precipitación, registros cada 10 minutos, estación 0026055120 Universidad del Valle, datos abiertos. https://www.datos.gov.co/resource/s54a-sgyg.json
+
+R15. Karlan, D., Mullainathan, S. y Roth, B. N. (2019). Debt Traps? Market Vendors and Moneylender Debt in India and the Philippines. AER: Insights 1(1), 27 a 42. https://poverty-action.org/sites/default/files/publications/Debt%20Trap.pdf
+
+R16. Brune, L., Giné, X. y Karlan, D. (2025). Give Me a Pass: Flexible Credit for Entrepreneurs in Colombia. NBER Working Paper 30634 (revisado nov 2025). https://www.nber.org/system/files/working_papers/w30634/w30634.pdf
+
+R17. DANE (2026). EMICRON 24 ciudades y áreas metropolitanas 2025, anexo estadístico. https://www.dane.gov.co/files/operaciones/EMICRON/anex-EMICRON-24Ciudades-2025.xlsx
+
+R18. Congreso de Colombia (2008). Ley 1258 de 2008 (sociedad por acciones simplificada). http://www.secretariasenado.gov.co/senado/basedoc/ley_1258_2008.html
+
+R19. Congreso de Colombia (2023). Ley 2300 de 2023 (contacto y cobranza). https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=213990
+
+R20. Congreso de Colombia (2000). Ley 599 de 2000, Código Penal, arts. 305 y 316. https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=6388
+
+R21. Presidencia de la República (1988). Decreto 1981 de 1988 (captación masiva). https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=75473
+
+R22. Banco Mundial (2025). Global Findex Database 2025. https://thedocs.worldbank.org/en/doc/be6615202d1f08a25855c8ac2d615122-0050012025/related/GlobalFindexDatabase2025.csv
+
+R23. DANE (2023). Encuesta de Cultura Política 2023, boletín técnico. https://www.dane.gov.co/files/operaciones/ECP/bol-ECP-2023.pdf
+
+R24. Nequi (2025, 20 oct). Comunicado de prensa sobre créditos desde el celular. https://www.nequi.com.co/conocenos/sala-de-prensa/comunicado/como-pedir-un-credito-desde-su-celular-nequi-le-cuenta-como-hacerlo-en-minutos
+
+R25. Alcaldía de Bogotá, Secretaría de Desarrollo Económico (2026, 19 ene). Bogotá fortalece la lucha contra el gota a gota con 4.200 millones. https://bogota.gov.co/mi-ciudad/desarrollo-economico/bogota-fortalece-lucha-contra-el-gota-gota-con-4200-millones
+
+R26. Portafolio (2024, 21 mar). Programa CREO, iniciativa para combatir el gota a gota, ha desembolsado más de 28.000 millones de pesos. https://www.portafolio.co/mis-finanzas/creditos/programa-creo-iniciativa-para-combatir-gota-a-gota-ha-desembolsado-mas-de-28-000-millones-de-pesos-601038
+
+R27. Tienda Pago (2026). Sitio web de la empresa, consultado el 26 sep 2026. https://www.tiendapago.com
+
+R28. Pérez Cruz, J. Á. (2025). Características del crédito informal en la ciudad de Bogotá. Working Paper 6(6), Politécnico Grancolombiano. https://revistas.poligran.edu.co/index.php/ngs/article/download/4812/5088
+
+R29. Casaburi, L. y Willis, J. (2018). Time versus State in Insurance: Experimental Evidence from Contract Farming in Kenya. American Economic Review 108(12), 3778 a 3813. https://www.aeaweb.org/articles?id=10.1257/aer.20171526
+
+R30. Holland & Knight (2026, feb). Suspensión provisional del decreto que fijó el salario mínimo. Salario mínimo de 2026: $1.750.905; el Consejo de Estado suspendió el decreto el 12 feb 2026, con efecto solo desde la publicación de un decreto transitorio, que no verifiqué. https://www.hklaw.com/en/insights/publications/2026/02/suspension-provisional-del-decreto-que-fijo-el-salario-minimo
+
+R31. Banca de las Oportunidades y Superintendencia Financiera de Colombia (2026). Reporte de Inclusión Financiera 2025. https://www.superfinanciera.gov.co/loader.php?lServicio=Tools2&lTipo=descargas&lFuncion=descargar&idFile=1082980
+
+R32. Cole, S., Giné, X., Tobacman, J., Topalova, P., Townsend, R. y Vickery, J. (2013). Barriers to Household Risk Management: Evidence from India. AEJ: Applied Economics 5(1), 104 a 135. https://www.aeaweb.org/articles?id=10.1257/app.5.1.104
+
+Anexo B. Prototipo: hoja de cálculo de la cláusula
+
+Qué es y qué hace hoy. Un archivo de Excel, prototipo.xlsx, que hace el cálculo central del mecanismo con fórmulas vivas: los supuestos van en celdas amarillas y los resultados se recalculan al cambiarlos. No tiene enlace público; lo llevo a la entrevista. La hoja 1 sigue a un vendedor durante 30 días de venta, con la lluvia de cada día como dato de entrada, por dos caminos: con la cláusula, lo que no alcanzó a pagar va en tercios; sin ella, lo cubre un gota a gota a 20% en 30 cuotas diarias. En el ejemplo (fiado de $62.000, 3 días de lluvia), el gota a gota termina en 3 préstamos, 2 de ellos para pagar cuotas del anterior, con $29.231 de interés (76% del ingreso de un día) y $63.043 pendientes al día 30; con la cláusula no queda nada pendiente. Tras dos días seguidos de lluvia, el vendedor paga $36.416 de lo aplazado dos días y le quedan $2.184 para la casa: el punto débil que quiero probar con sextos. La hoja 2 tiene los números de la SAS y da los mismos valores de la Tabla 3.
+
+Qué no hace todavía. No lee la lluvia real (la del ejemplo es inventada), no manda avisos por WhatsApp, no lleva el registro de un minorista y no modela la mercancía que se daña.
+
+Tiempo, herramientas y a quién se lo mostré. Cerca de una hora, el 27 sep 2026, en Python con openpyxl; usé IA (Claude Code) para escribir y revisar el código y comparé las fórmulas con un cálculo independiente: 14 de 14 resultados iguales. Todavía no se lo he mostrado a vendedores ni a minoristas. Lo primero que quiero revisar con ellos son los supuestos sin dato: cuánto sacan fiado, cuánto venden un día de lluvia y si lo que no venden se daña.
+
+Maquetas en texto. Aviso al minorista: "Hoy es día de lluvia (Univalle, 6 mm a las 2:30 p. m.). Rige la cláusula. Respóndame quién no alcanzó a pagar y cuánto." Tarjeta del vendedor: "Si el IDEAM marca lluvia, lo de ese día me lo paga en sus 3 días de venta siguientes, sin recargo. Mañana hay mercancía."
+
+Anexo C. Método y campo
+
+Cómo investigué y cómo usé la IA. Dividí la investigación en frentes (tamaño, cómo funciona el gota a gota, evidencia académica, intentos formales, fintechs, estructura legal, fiado y confianza) y usé Claude Code con agentes que buscaban y leían fuentes en paralelo. Cada cifra se contrastó con el documento original (el cuadro del DANE, la página del informe, el artículo de la ley) y solo uso las confirmadas. Después le pedí a un agente que leyera la propuesta con la rúbrica, como un jurado: la primera revisión marcó 19 afirmaciones sin respaldo, que corregí o saqué, y las siguientes me hicieron agregar el piso para la casa y medir la caja del minorista. Los cálculos son míos, en Python sobre datos abiertos; la IA me ayudó con el código y los borradores. Las notas de voz de la informante las transcribí en local con Whisper. Lo que decidí yo: organizar el campo, cambiar de la ventanilla del tendero a la cláusula después del campo, descartar el seguro con mis números y no usar cifras sin fuente, como "12 millones de colombianos usan gota a gota".
+
+Lluvia. Estación del IDEAM 0026055120, Universidad del Valle, registros cada 10 minutos [R14]. Sumo la lluvia entre 7:00 y 18:59 y cuento solo días con al menos 60 de 72 registros. Del 27 sep 2025 al 26 sep 2026: 26 de 294 días de venta con 5 mm o más, 3 rachas de dos días y ninguna de tres. El umbral no está calibrado contra ventas y no medí la distancia a los carritos.
+
+Notas de campo (anonimizadas). Nadie contactó prestamistas. No hay grabaciones ni fotos de vendedores, ni nombres, barrios u oficios que identifiquen a alguien.
+
+Informante (dos notas de voz, 27 sep 2026). No ha usado el gota a gota y conoce varios casos de amigos y familiares. Segunda mano, sin muestreo y con sesgo hacia los casos que salieron mal.
+
+• Ante el atraso, lo primero es la amenaza: "si le quedan mal con alguna cuota, te empiezan a cobrar feo o les empiezan a amenazar".
+• Deuda que paga deuda: "no acaban de salir de uno y se meten en otro".
+• El banco pide respaldo: "que tengan casa o... alguna propiedad... o un trabajo donde les paguen por nómina".
+• El cobro sigue los días de trabajo: una vendedora de comida pagaba seis días a la semana y el día que no salía no le cobraban.
+• La recomendación compra paciencia y quien recomienda no quiere cobrar ("yo no le digo nada, dígale usted").
+• Con una deuda bancaria de un familiar, su consejo fue dejar de pagar y negociar cuando llamen. De ahí saco una hipótesis mía: cuando no alcanza, se le paga primero al que amenaza.
+
+Colaborador (resumen oral en dos notas de voz, 27 sep 2026). No sé cuántos vendedores fueron; las comillas son palabras del colaborador: "Ellos llegan, y con lo que tienen que comprar para subsistir ese día, se lo piden prestado al minorista. Entonces hay una cadena: mayorista, minorista y vendedor ambulante. [...] El minorista no le cobra interés [...]. Y hay días en que, no sé, llovió, entonces nadie va. [...] Y ahí es cuando entran con un gota a gota [...]. O sea, se vuelve algo circular." Sobre formalizarse: "yo no quiero pagar impuestos". Falta preguntar el precio de contado, porque en Kenia el fiado "sin interés" a veces se cobra en el precio [R13].
+
+Preguntas que faltan (a vendedores y a un minorista, nunca a prestamistas). La última vez que llovió y no vendió, ¿el que le fía le esperó o le exigió esa tarde? ¿Lo que no vendió se dañó? ¿En qué se fue la plata del gota a gota? Al minorista: ¿le paga a su proveedor de contado o a plazo, y cuántos vendedores perdió este año por deudas?

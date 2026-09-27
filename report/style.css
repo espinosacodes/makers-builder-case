@@ -1,0 +1,183 @@
+/* Print stylesheet for the Makers Builder Case report (US Letter, Chrome headless). */
+
+:root {
+  --ink: #111111;
+  --muted: #555555;
+  --rule: #b8b8b8;
+  --accent: #1f4e79;        /* single restrained accent */
+  --accent-soft: #eef3f8;
+}
+
+@page {
+  size: Letter;
+  margin: 1.5cm 1.5cm 1.4cm 1.5cm;
+
+  @top-left {
+    content: "Santiago Espinosa · Cali, Colombia · Makers Fellowship, Builder Case";
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 7.5pt;
+    color: #666666;
+    vertical-align: bottom;
+    padding-bottom: 4pt;
+  }
+  @bottom-right {
+    content: counter(page) " / " counter(pages);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 7.5pt;
+    color: #666666;
+    vertical-align: top;
+    padding-top: 4pt;
+  }
+}
+
+/* No running header on the first page: the title block already carries the author line. */
+@page :first {
+  @top-left { content: none; }
+}
+
+* { box-sizing: border-box; }
+
+html {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: var(--ink);
+  font-family: Charter, "Bitstream Charter", Georgia, "Times New Roman", serif;
+  font-size: 9.8pt;
+  line-height: 1.36;
+  hyphens: auto;
+  text-align: left;
+  orphans: 3;
+  widows: 3;
+}
+
+/* Title block */
+.title-block {
+  border-bottom: 1.2pt solid var(--accent);
+  padding-bottom: 5pt;
+  margin-bottom: 8pt;
+}
+.title-block h1 { margin: 0 0 2pt 0; }
+.title-block .byline {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 8.5pt;
+  color: var(--muted);
+}
+
+/* Headings: compact, sans, accent only on h1/h2 */
+h1, h2, h3, h4 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.2;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+h1 { font-size: 15pt; margin: 0 0 6pt 0; color: var(--accent); }
+h2 {
+  font-size: 11.5pt;
+  margin: 10pt 0 3pt 0;
+  color: var(--accent);
+  border-bottom: 0.5pt solid var(--rule);
+  padding-bottom: 1.5pt;
+}
+h3 { font-size: 10pt; margin: 7pt 0 2pt 0; }
+h4 { font-size: 9.5pt; margin: 5pt 0 1pt 0; font-style: italic; font-weight: 600; }
+
+p { margin: 0 0 4.5pt 0; }
+ul, ol { margin: 0 0 4.5pt 0; padding-left: 14pt; }
+li { margin: 0 0 1.5pt 0; }
+strong { font-weight: 700; }
+a { color: var(--accent); text-decoration: none; }
+
+sup, .ref {
+  font-size: 7pt;
+  line-height: 0;
+  color: var(--accent);
+}
+
+/* Tables: thin rules, small font */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 4pt 0 7pt 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 8.5pt;
+  line-height: 1.25;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+thead th {
+  text-align: left;
+  font-weight: 700;
+  border-top: 0.9pt solid var(--ink);
+  border-bottom: 0.6pt solid var(--ink);
+  padding: 2.5pt 4pt;
+  vertical-align: bottom;
+}
+tbody td {
+  border-bottom: 0.4pt solid var(--rule);
+  padding: 2.2pt 4pt;
+  vertical-align: top;
+}
+tbody tr:last-child td { border-bottom: 0.9pt solid var(--ink); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+caption {
+  caption-side: top;
+  text-align: left;
+  font-size: 8.5pt;
+  font-weight: 700;
+  padding-bottom: 2pt;
+}
+tr { break-inside: avoid; page-break-inside: avoid; }
+
+/* Callout: key claim or honest caveat */
+.callout {
+  border-left: 2.5pt solid var(--accent);
+  background: var(--accent-soft);
+  padding: 4pt 7pt;
+  margin: 5pt 0 7pt 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.callout p:last-child { margin-bottom: 0; }
+
+/* Figures */
+figure {
+  margin: 5pt 0 8pt 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+figure img, figure svg { max-width: 100%; height: auto; display: block; }
+figcaption {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 8pt;
+  color: var(--muted);
+  margin-top: 2pt;
+}
+
+/* Small print: source notes, footnotes */
+.note, .sources, .small {
+  font-size: 8.2pt;
+  line-height: 1.3;
+  color: #333333;
+}
+.sources ol { padding-left: 16pt; }
+
+/* Two-column helper for dense sections */
+.cols-2 { column-count: 2; column-gap: 14pt; }
+.cols-2 > * { break-inside: avoid; }
+
+/* Keep blocks together */
+.keep { break-inside: avoid; page-break-inside: avoid; }
+
+/* Annexes always start on a new page */
+.annex {
+  break-before: page;
+  page-break-before: always;
+}
+.annex > h1:first-child, .annex > h2:first-child { margin-top: 0; }
+
+.pagebreak { break-before: page; page-break-before: always; }

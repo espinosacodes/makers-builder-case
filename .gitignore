@@ -1,0 +1,20 @@
+# Private audio (third parties and family voice notes)
+*.opus
+audio/
+
+# Browser automation logs
+.playwright-mcp/
+
+# Raw scraped material from interrupted research runs (third party text, unverified)
+docs/research/_salvage/
+
+# Original challenge files as distributed by the organizers
+docs/source/
+
+# Build artifacts and system files
+report/docs/fit-test*.pdf
+report/docs/fit-test*.html
+report/fit-test*
+__pycache__/
+*.pyc
+.DS_Store
