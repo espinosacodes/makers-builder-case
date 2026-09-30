@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Defensa Builder Case</title>
+<style>
+  /* Page = one 16:9 slide, 1280 x 720 CSS px */
+  @page { size: 13.333in 7.5in; margin: 0; }
+  :root { --ink: #111111; --accent: #1558B0; --rule: #111111; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #FFFFFF; color: var(--ink); font-family: Arial, Helvetica, sans-serif;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .slide { position: relative; width: 1280px; height: 720px; overflow: hidden; background: #FFFFFF;
+    break-after: page; page-break-after: always; padding: 60px 60px 0 60px; }
+  .slide:last-child { break-after: auto; page-break-after: auto; }
+  h1 { font-size: 34pt; font-weight: bold; line-height: 1.15; text-align: left; max-width: 1160px; }
+  .acc { color: var(--accent); }
+  .src { position: absolute; left: 60px; bottom: 28px; right: 110px; font-size: 12pt; line-height: 1.3; }
+  .num { position: absolute; right: 60px; bottom: 28px; font-size: 12pt; }
+  .label { font-size: 26pt; line-height: 1.25; }
+  .body { position: absolute; left: 60px; right: 60px; }
+
+  /* Slide 1 */
+  .topline { font-size: 12pt; margin-bottom: 14px; }
+  .s1 h1 { font-size: 32pt; }
+  .flow { display: flex; align-items: stretch; justify-content: space-between; top: 250px; height: 250px; }
+  .box { border: 2pt solid var(--ink); width: 330px; display: flex; flex-direction: column;
+    justify-content: center; align-items: center; text-align: center; padding: 16px; font-size: 28pt; line-height: 1.2; }
+  .box .big { font-size: 72pt; font-weight: bold; line-height: 1; color: var(--accent); }
+  .arrow { width: 85px; display: flex; align-items: center; justify-content: center; }
+  .nopresto { top: 540px; text-align: center; font-size: 28pt; font-weight: bold; }
+
+  /* Slide 2 */
+  .bars { top: 240px; }
+  .barrow { margin-bottom: 28px; }
+  .barrow .label { margin-bottom: 8px; }
+  .bar { height: 56px; }
+  .axisnote { font-size: 24pt; margin-top: -6px; }
+  .formal { top: 560px; font-size: 26pt; }
+  .formal b { font-size: 40pt; }
+
+  /* Slide 3 */
+  .quote { top: 250px; }
+  .quote .who { font-size: 26pt; margin-bottom: 22px; }
+  .quote p { font-size: 36pt; line-height: 1.35; }
+
+  /* Slide 4 */
+  .twin { top: 190px; display: flex; gap: 40px; }
+  .twin > div:first-child { width: 470px; }
+  .twin > div:last-child { flex: 1; }
+  .twin .bignum { white-space: nowrap; }
+  .bignum { font-size: 96pt; font-weight: bold; line-height: 1; color: var(--accent); }
+  .strip { display: grid; grid-template-columns: repeat(21, 13px); gap: 3px; margin-top: 16px; }
+  .strip i { width: 13px; height: 13px; border: 1px solid var(--ink); display: block; }
+  .strip i.r { background: var(--accent); border-color: var(--accent); }
+
+  /* Slide 5 */
+  .kill { top: 250px; width: 1160px; border-collapse: collapse; }
+  .kill td { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 30px 0; vertical-align: middle; }
+  .kill .name { font-size: 28pt; width: 300px; }
+  .kill .name span { position: relative; display: inline-block; }
+  .kill .name span::after { content: ''; position: absolute; left: -4px; right: -4px; top: 52%; height: 3pt; background: var(--ink); }
+  .kill .fig { white-space: nowrap; font-size: 48pt; font-weight: bold; color: var(--accent); text-align: right; }
+
+  /* Slide 6 */
+  .quad { top: 200px; height: 400px; left: 160px; right: 160px; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+  .quad div { display: flex; align-items: center; justify-content: center; text-align: center; font-size: 28pt; padding: 20px; }
+  .quad .c1 { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .quad .c2 { border-bottom: 1px solid var(--rule); }
+  .quad .c3 { border-right: 1px solid var(--rule); }
+  .dot { position: absolute; left: 50%; top: 50%; width: 30px; height: 30px; margin: -15px 0 0 -15px; border-radius: 50%; background: var(--accent); }
+
+  /* Slide 7 */
+  .cols { top: 250px; display: grid; grid-template-columns: 1fr 1fr 1fr; }
+  .cols > div { text-align: center; padding: 0; }
+  .cols .bignum { white-space: nowrap; }
+
+  .cols .head { font-size: 24pt; font-weight: bold; margin-bottom: 18px; }
+  .cols .bignum { font-size: 80pt; }
+  .cols .label { font-size: 24pt; margin-top: 16px; }
+
+  /* Slide 8 */
+  .timeline { top: 300px; }
+  .tl-line { position: absolute; left: 116px; right: 116px; top: 14px; height: 2px; background: var(--ink); }
+  .tl-pts { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); }
+  .tl-pts div { text-align: center; }
+  .tl-pts .pt { width: 30px; height: 30px; border-radius: 50%; background: var(--ink); margin: 0 auto 22px; }
+  .tl-pts .pt.a { background: var(--accent); }
+  .tl-pts b { display: block; font-size: 26pt; }
+  .tl-pts span { display: block; font-size: 24pt; margin-top: 4px; }
+
+  /* Slide 9 */
+  .center { top: 220px; text-align: center; }
+  .huge { font-size: 140pt; font-weight: bold; line-height: 1; color: var(--accent); }
+  .center .line { font-size: 24pt; margin-top: 36px; white-space: nowrap; }
+
+  /* Slide 10 */
+  .closing { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 60px; }
+  .closing .t { font-size: 44pt; font-weight: bold; line-height: 1.2; }
+  .closing .p { font-size: 36pt; line-height: 1.3; margin-top: 28px; }
+</style>
+</head>
+<body>
+
+<!-- 1 -->
+<section class="slide s1">
+  <div class="topline">Cláusula de lluvia del fiado · Santiago Espinosa · Cali · Hipótesis: el gota a gota entra el día que llueve</div>
+  <h1>Al vendedor no le falta crédito. Le falta que un día de lluvia no cuente como quedar mal.</h1>
+  <div class="body flow">
+    <div class="box"><div>Lluvia ≥</div><div class="big">5 mm</div></div>
+    <div class="arrow"><svg width="70" height="24" viewBox="0 0 70 24"><line x1="0" y1="12" x2="58" y2="12" stroke="#111111" stroke-width="3"/><polygon points="56,3 70,12 56,21" fill="#111111"/></svg></div>
+    <div class="box">Guarda hasta $15.000</div>
+    <div class="arrow"><svg width="70" height="24" viewBox="0 0 70 24"><line x1="0" y1="12" x2="58" y2="12" stroke="#111111" stroke-width="3"/><polygon points="56,3 70,12 56,21" fill="#111111"/></svg></div>
+    <div class="box">Tercios, 3 días, sin recargo</div>
+  </div>
+  <div class="body nopresto">No presto. No aseguro.</div>
+  <div class="num">1</div>
+</section>
+
+<!-- 2 -->
+<section class="slide">
+  <h1>El formal no pierde por precio: pierde por la forma</h1>
+  <div class="body bars">
+    <div class="barrow"><div class="label">Legal: $3.436</div><div class="bar" style="width: 773px; background: #111111;"></div></div>
+    <div class="barrow"><div class="label">Gota a gota: $4.000</div><div class="bar" style="width: 900px; background: #1558B0;"></div></div>
+    <div class="axisnote">diarios por $100.000</div>
+  </div>
+  <div class="body formal"><b>87,2%</b> del formal: cuota mensual</div>
+  <div class="src">Usura sep. 2026, cálculo propio (R7) · Encuesta de Demanda de Inclusión Financiera 2022, p. 58 (R8)</div>
+  <div class="num">2</div>
+</section>
+
+<!-- 3 -->
+<section class="slide">
+  <h1>Mi hipótesis: el gota a gota entra la tarde en que llueve</h1>
+  <div class="body quote">
+    <div class="who">Colaborador:</div>
+    <p>“…<span class="acc">llovió</span>, entonces nadie va…”<br>“Y ahí es cuando entran con un gota a gota.”</p>
+  </div>
+  <div class="src">Resumen oral de un colaborador que habló en mi nombre, estación Universidades del MIO, 26 sep 2026. Número de vendedores: desconocido. Anexo C.</div>
+  <div class="num">3</div>
+</section>
+
+<!-- 4 -->
+<section class="slide">
+  <h1>El ambulante va al gota a gota, y la lluvia es frecuente y corta</h1>
+  <div class="body twin">
+    <div>
+      <div class="bignum">61,8%</div>
+      <div class="label">ambulantes con crédito:<br>gota a gota</div>
+    </div>
+    <div>
+      <div class="bignum">26 de 294</div>
+      <div class="label">días de venta con lluvia</div>
+      <div class="strip" id="strip"></div>
+    </div>
+  </div>
+  <div class="src">DANE, EMICRON Vendedores ambulantes 2025, C. 18.1 (R2) · IDEAM Univalle, 27 sep 2025 a 26 sep 2026, ≥ 5 mm de 7 a. m. a 7 p. m., cálculo propio (R14)</div>
+  <div class="num">4</div>
+</section>
+
+<!-- 5 -->
+<section class="slide">
+  <h1>Lo frecuente se suaviza con plazo; lo raro se asegura</h1>
+  <table class="body kill">
+    <tr><td class="name"><span>Préstamo diario</span></td><td class="fig">$5.857 a -$26.143 al año</td></tr>
+    <tr><td class="name"><span>Seguro de lluvia</span></td><td class="fig">43% del ingreso, cada día</td></tr>
+  </table>
+  <div class="src">Cálculos propios, informe sección 4 · siniestralidad de microseguros (R35, p. 172)</div>
+  <div class="num">5</div>
+</section>
+
+<!-- 6 -->
+<section class="slide">
+  <h1>Un dato público corre la fecha: una pieza, cuatro puntos</h1>
+  <div class="body quad">
+    <div class="c1">No presto</div>
+    <div class="c2">Solo el día sin venta</div>
+    <div class="c3">Su minorista de siempre</div>
+    <div class="c4">Plazo por dato</div>
+    <span class="dot"></span>
+  </div>
+  <div class="num">6</div>
+</section>
+
+<!-- 7 -->
+<section class="slide">
+  <h1>Si no cierra, será por volumen y tarifa, no por riesgo de crédito</h1>
+  <div class="body cols">
+    <div><div class="head">Vendedor</div><div class="bignum">0</div><div class="label">pendiente</div></div>
+    <div><div class="head">Quien fía</div><div class="bignum">2,5%</div><div class="label">de su margen</div></div>
+    <div><div class="head">Mi empresa</div><div class="bignum">Mes 10</div><div class="label">sin salario</div></div>
+  </div>
+  <div class="src">Prototipo en Excel, 3 días de lluvia simulados (Anexo B) · $4.000 de $161.200 al mes, supuestos [S] · con salario, mes 22 (Tabla 3)</div>
+  <div class="num">7</div>
+</section>
+
+<!-- 8 -->
+<section class="slide">
+  <h1>Primero la pregunta que la mata; después, un día de lluvia paso a paso</h1>
+  <div class="body timeline">
+    <div class="tl-line"></div>
+    <div class="tl-pts">
+      <div><div class="pt a"></div><b>Antes:</b><span>6 vendedores</span></div>
+      <div><div class="pt"></div><b>Semana 1:</b><span>gratis</span></div>
+      <div><div class="pt a"></div><b>Lluvia:</b><span>WhatsApp</span></div>
+      <div><div class="pt"></div><b>3 días:</b><span>tercios</span></div>
+      <div><div class="pt"></div><b>Mes:</b><span>Nequi</span></div>
+    </div>
+  </div>
+  <div class="src">Sección 4, "Cómo sé si me equivoqué" · Tabla 2 del informe.</div>
+  <div class="num">8</div>
+</section>
+
+<!-- 9 -->
+<section class="slide">
+  <h1>El riesgo real tiene dos caras: que ya le esperen, y la caja del minorista</h1>
+  <div class="body center">
+    <div class="huge">3 de 6</div>
+    <div class="line">Caja del minorista un día de lluvia: $562.000 con 12 vendedores</div>
+  </div>
+  <div class="src">Umbral fijado antes de oír respuestas, sección 4 · Caja: sección 3, cálculo propio con supuestos [S]</div>
+  <div class="num">9</div>
+</section>
+
+<!-- 10 -->
+<section class="slide">
+  <div class="closing">
+    <div class="t">Al vendedor no le falta crédito.</div>
+    <div class="p">Le falta que <span class="acc">un día de lluvia</span><br>no cuente como quedar mal.</div>
+  </div>
+  <div class="num">10</div>
+</section>
+
+<script>
+  // Rain strip: 294 selling days (Mon to Sat) in chronological order, rain days from models/rain_cali.py
+  const RAIN_IDX = [5, 11, 14, 17, 24, 25, 27, 56, 72, 77, 84, 169, 171, 172, 186, 189, 191, 193, 194, 209, 210, 217, 219, 254, 260, 293];
+  const strip = document.getElementById('strip');
+  if (RAIN_IDX.length === 26) {
+    const set = new Set(RAIN_IDX);
+    for (let i = 0; i < 294; i++) {
+      const cell = document.createElement('i');
+      if (set.has(i)) cell.className = 'r';
+      strip.appendChild(cell);
+    }
+  } else {
+    strip.remove();
+  }
+</script>
+</body>
+</html>

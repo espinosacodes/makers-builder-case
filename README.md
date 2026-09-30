@@ -8,6 +8,30 @@ Este repositorio contiene todo el proceso detrás de mi propuesta para el Builde
 
 **Mi respuesta en una línea:** para el vendedor que vive del fiado diario, el gota a gota no gana por precio; gana la tarde en que un día sin ventas (la lluvia) rompe el fiado sin interés que ya tiene con su minorista. La propuesta es una regla escrita, activada por un dato público de lluvia del IDEAM, que corre en tercios el pago del fiado de ese día. No presto, no aseguro y la plata del vendedor nunca pasa por mí.
 
+## Los actores, explicado simple
+
+```
+MAYORISTA     vende al por mayor (por ejemplo, en la galería)
+    ↓ le vende mercancía
+MINORISTA     "quien fía": cada mañana le entrega mercancía fiada al vendedor
+    ↓ le fía la mercancía del día, sin interés
+VENDEDOR      el usuario: vende desde su carrito en el día y paga en la tarde
+
+GOTA A GOTA   aparece el día que llueve y el vendedor no alcanza a pagarle al minorista
+IDEAM         da el dato público de lluvia que activa la cláusula
+YO            pongo la regla, el aviso de lluvia y el registro; mi cliente es el minorista
+```
+
+**Quién le paga a quién.** El vendedor no me paga nada. El minorista me paga $4.000 al mes por cada vendedor inscrito. Yo nunca toco la plata del vendedor.
+
+**Por qué le conviene al minorista (quien fía).** Cada vendedor le saca unos $62.000 diarios de mercancía; con un margen de 10% [supuesto], le deja unos $161.200 al mes de ganancia, así que mis $4.000 son el 2,5% de esa ganancia. A él, la cláusula le cuesta por vendedor unos $98.000 al año: mi tarifa ($48.000), lo que le cuesta esperar la plata unos días (unos $2.000) y lo que algún vendedor no le termine pagando (unos $48.000 si no le pagan el 3% de lo aplazado). Cada vendedor le deja unos $1,9 millones al año. Con 20 vendedores, la cláusula le cuesta más o menos lo que le deja uno solo. Hoy, cuando un vendedor cae en el gota a gota, el minorista puede perderlo: se esconde, deja de comprarle o cierra. Si de cada 20 vendedores la cláusula le salva uno, le sale gratis.
+
+**Cuándo se sostiene mi empresa.** "Cerrar" quiere decir que lo que me pagan los minoristas cubre mis costos del mes (transporte, celular, WhatsApp, contador), unos $780.000. Cada vendedor me deja $2.800 netos, porque no todos pagan y los mensajes cuestan. Sin salario necesito 279 vendedores y llego en el mes 10; con un salario mínimo, 904 vendedores y el mes 22.
+
+**Por qué no quiebro por impago.** Un prestamista quiebra cuando no le pagan lo que prestó, y yo no presto nada. Mi empresa solo puede fallar por dos cosas: que no se inscriban suficientes vendedores (volumen) o que los minoristas no quieran pagar los $4.000 (tarifa).
+
+Los números salen de `models/business_model.py` (función `payer_view` y el plan austero) y están en la Tabla 3 del informe.
+
 ## Dónde está cada cosa
 
 | Carpeta o archivo | Qué hay |
@@ -24,6 +48,7 @@ Este repositorio contiene todo el proceso detrás de mi propuesta para el Builde
 | `docs/research/01` a `13` | Un archivo por frente de investigación, cada uno con su tabla de verificación |
 | `docs/00` a `docs/09` | El reto, la rúbrica, mi lectura del caso, guías de campo y notas de campo anonimizadas |
 | `prompt.md` | El prompt que usé para investigar con otros agentes |
+| `pitch/` | La defensa de 7 minutos: guion por diapositiva, diapositivas (`pitch/deck/`, PDF y PowerPoint), banco de preguntas, ensayo y guía para contarlo sin guion (`estudio-del-caso.md`) |
 
 ## Cómo se hizo
 
